@@ -15,12 +15,21 @@ $ npm install plugin-name-to-package-name
 ```js
 const { transform } = require('plugin-name-to-package-name');
 
-console.log(transform('@foo/bar', 'some-plugin')); // @foo/some-plugin-bar
+console.log(transform('@foo/bar', 'eslint-plugin')); // @foo/eslint-plugin-bar
 ```
 
 ## Usage
 
-`transform` takes two parameters; the `pluginName`, and the `pluginPrefix`. In the above example, `pluginName` is `'@foo/bar'` and `pluginPrefix` is `some-plugin`.
+`transform` takes two parameters; the `pluginName`, and the `pluginPrefix`. In the above example, `pluginName` is `'@foo/bar'` and `pluginPrefix` is `'eslint-plugin'`.
+
+### Examples
+
+| `pluginName` | `pluginPrefix` | Result |
+|-|-|-|
+| `@foo` | `eslint-plugin` | `@foo/eslint-plugin` |
+| `bar` | `stricter-plugin` | `stricter-plugin-bar` |
+| `@foo/bar` | `modster-plugin` | `@foo/modster-plugin-bar` | 
+
 
 ## Contributions
 
