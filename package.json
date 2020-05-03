@@ -1,6 +1,6 @@
 {
     "name": "plugin-name-to-package-name",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "description": "Utility to transform plugin names into package names as seen at e.g. eslint, stricter, and others",
     "license": "MIT",
     "author": {
@@ -11,6 +11,7 @@
         "url" : "https://github.com/obweger/plugin-name-to-package-name.git"
     },
     "main": "dist/index.js",
+    "types": "dist/index.d.ts",
     "scripts": {
         "test": "jest && tsc --noEmit",
         "prepare": "tsc --declaration"
