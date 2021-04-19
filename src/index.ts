@@ -1,4 +1,9 @@
+import isAbsolute from 'is-absolute'
+
 export const transform = (pluginName: string, pluginPrefix: string) => {
+    if (isAbsolute(pluginName)) {
+        return pluginName
+    }
     const parts = pluginName.split('/');
     if (parts.length === 1) {
         if (parts[0].startsWith('@')) {
