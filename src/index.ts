@@ -1,7 +1,7 @@
 import isAbsolute from 'is-absolute'
 
 export const transform = (pluginName: string, pluginPrefix: string) => {
-    if (isAbsolute(pluginName)) {
+    if (isAbsolute(pluginName) || pluginName.startsWith('.')) {
         return pluginName
     }
     const parts = pluginName.split('/');
