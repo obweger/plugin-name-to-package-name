@@ -13,4 +13,13 @@ describe('plugin-name-to-package-name', () => {
     test('transforms deeply nested plugin names [theoretical]', () => {
         expect(transform('@foo/bar/baz', 'some-plugin')).toBe('@foo/bar/some-plugin-baz');
     });
+    test('keeps absolute directories', () => {
+        expect(transform('/foo/bar/baz', 'some-plugin')).toBe('/foo/bar/baz');
+    });
+    test('keeps relative directories subpath', () => {
+        expect(transform('./foo', 'some-plugin')).toBe('./foo');
+    });
+    test('keeps relative directories parent path', () => {
+        expect(transform('../foo', 'some-plugin')).toBe('../foo');
+    });
 });
